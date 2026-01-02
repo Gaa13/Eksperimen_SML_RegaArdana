@@ -1,0 +1,52 @@
+name: Train Model & Save Artifacts
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  train-cml:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./Workflow-CI
+
+    steps:
+      # 1. Checkout Code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      # 3. Install Library
+      - name: Install Dependencies
+        run: |
+          pip install -r Modelling_Tunning_requirements.txt
+
+      # 4. Jalankan Script Training
+      - name: Run Training Script
+        run: |
+          python Modelling_Tunning.py
+
+      # 5. Simpan Hasil (Commit & Push)
+      - name: Commit and Push MLflow Artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Kita add folder mlruns yang baru saja dibuat
+          git add mlruns/
+          
+          # Cek status dan commit
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-save: Model Artifacts [skip ci]" && git push)
