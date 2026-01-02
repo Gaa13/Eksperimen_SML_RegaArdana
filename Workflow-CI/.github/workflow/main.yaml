@@ -35,7 +35,7 @@ jobs:
       # 4. Jalankan Script Training
       - name: Run Training Script
         run: |
-          python modelling.py
+          python Modelling_Tunning.py
 
       # 5. Simpan Hasil (Commit & Push)
       - name: Commit and Push MLflow Artifacts
