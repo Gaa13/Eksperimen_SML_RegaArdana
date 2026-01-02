@@ -7,10 +7,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # Dataset
-X_train = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\X_train.csv')
-X_test = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\X_test.csv')
-y_train = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\y_train.csv')
-y_test = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\y_test.csv')
+X_train = pd.read_csv('Flood_Preprocessing/X_train.csv')
+X_test = pd.read_csv('Flood_Preprocessing/X_test.csv')
+y_train = pd.read_csv('Flood_Preprocessing/y_train.csv')
+y_test = pd.read_csv('Flood_Preprocessing/y_test.csv')
 
 # Meratakan y agar formatnya sesuai standar Scikit-Learn (1D Array)
 y_train = y_train.values.ravel()
@@ -26,9 +26,9 @@ rf = RandomForestRegressor(random_state=42)
 
 # Grid parameter
 param_grid = {
-    'n_estimators': [100, 200],
-    'max_depth': [10, 20, None],
-    'min_samples_leaf': [1, 2, 4]
+    'n_estimators': [50, 100],
+    'max_depth': [5, 10, 15],
+    'min_samples_leaf': [2, 5, 10]
 }
 
 # Mencari parameter terbaik
@@ -67,4 +67,3 @@ with mlflow.start_run(run_name="Modelling_Tunning"):
 
     print(f"R2 Score (Test): {r2:.4f}")
     print(f"RMSE: {rmse:.4f}")
-    print("Silakan cek terminal: mlflow ui")
