@@ -30,12 +30,12 @@ jobs:
       # 3. Install Library
       - name: Install Dependencies
         run: |
-          pip install -r Modelling_Tunning_requirements.txt
+          pip install -r Modelling_requirements.txt
 
       # 4. Jalankan Script Training
       - name: Run Training Script
         run: |
-          python Modelling_Tunning.py
+          python Modelling.py
 
       # 5. Simpan Hasil (Commit & Push)
       - name: Commit and Push MLflow Artifacts
