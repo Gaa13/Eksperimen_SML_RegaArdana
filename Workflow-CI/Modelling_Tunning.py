@@ -7,10 +7,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # Dataset
-X_train = pd.read_csv('Workflow-CI/Flood_Preprocessing/X_train.csv')
-X_test = pd.read_csv('Workflow-CI/Flood_Preprocessing/X_test.csv')
-y_train = pd.read_csv('Workflow-CI/Flood_Preprocessing/y_train.csv')
-y_test = pd.read_csv('Workflow-CI/Flood_Preprocessing/y_test.csv')
+X_train = pd.read_csv('Flood_Preprocessing/X_train.csv')
+X_test = pd.read_csv('Flood_Preprocessing/X_test.csv')
+y_train = pd.read_csv('Flood_Preprocessing/y_train.csv')
+y_test = pd.read_csv('Flood_Preprocessing/y_test.csv')
 
 # Meratakan y agar formatnya sesuai standar Scikit-Learn (1D Array)
 y_train = y_train.values.ravel()
@@ -19,6 +19,7 @@ y_test = y_test.values.ravel()
 print("Data berhasil dimuat.")
 
 # MLFLOW
+mlflow.set_tracking_uri("file:./mlruns")
 mlflow.set_experiment("Modelling_Tunning")
 
 # HYPERPARAMETER TUNING
@@ -67,6 +68,3 @@ with mlflow.start_run(run_name="Modelling_Tunning"):
 
     print(f"R2 Score (Test): {r2:.4f}")
     print(f"RMSE: {rmse:.4f}")
-
-    print("Silakan cek terminal: mlflow ui")
-
