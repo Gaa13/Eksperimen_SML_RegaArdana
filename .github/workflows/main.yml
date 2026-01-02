@@ -30,7 +30,7 @@ jobs:
       # 3. Install Library
       - name: Install Dependencies
         run: |
-          pip install -r Modelling_Tunning_requirements.txt
+          pip install -r Modelling_requirements.txt
 
       # 4. Jalankan Script Training
       - name: Run Training Script
