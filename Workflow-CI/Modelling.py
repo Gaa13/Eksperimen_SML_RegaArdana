@@ -3,10 +3,10 @@ import mlflow
 from sklearn.ensemble import RandomForestRegressor
 
 # Dataset
-X_train = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\X_train.csv')
-X_test = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\X_test.csv')
-y_train = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\y_train.csv')
-y_test = pd.read_csv(r'D:\Asah Academy\Membuat Sistem Machine Learning\Flood_Preprocessing\y_test.csv')
+X_train = pd.read_csv('Flood_Preprocessing/X_train.csv')
+X_test = pd.read_csv('Flood_Preprocessing/X_test.csv')
+y_train = pd.read_csv('Flood_Preprocessing/y_train.csv')
+y_test = pd.read_csv('Flood_Preprocessing/y_test.csv')
 
 # Meratakan y agar formatnya sesuai standar Scikit-Learn (1D Array)
 y_train = y_train.values.ravel()
@@ -35,5 +35,3 @@ with mlflow.start_run(run_name="Autolog"):
     print(f"Training Selesai!")
     print(f"Akurasi Training: {acc_train:.4f}")
     print(f"Akurasi Testing: {acc_test:.4f}")
-
-    # Cek hasil lengkap (Metrics, Params, Artifacts) di terminal dengan: mlflow ui
