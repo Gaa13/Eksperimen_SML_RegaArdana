@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_RegaArdana/Eksperimen_SML_RegaArdana/Workflow-CI/mlruns/490000236621690074/71a4b784d94341b78813693d7ecccace/artifacts
+end_time: 1767483995961
+entry_point_name: ''
+experiment_id: '490000236621690074'
+lifecycle_stage: active
+run_id: 71a4b784d94341b78813693d7ecccace
+run_name: Modelling_Tunning
+run_uuid: 71a4b784d94341b78813693d7ecccace
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767483992583
+status: 3
+tags: []
+user_id: runner
