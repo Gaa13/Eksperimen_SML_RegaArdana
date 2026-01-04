@@ -40,7 +40,7 @@ best_params = grid_search.best_params_
 print(f"Tuning Selesai. Parameter Terbaik: {best_params}")
 
 # MANUAL LOGGING
-with mlflow.start_run(run_name="Modelling_Tunning"):
+with mlflow.start_run(run_name="Modelling"):
     
     # Log Parameter (Manual)
     print("Logging parameters ke MLflow...")
@@ -67,3 +67,4 @@ with mlflow.start_run(run_name="Modelling_Tunning"):
 
     print(f"R2 Score (Test): {r2:.4f}")
     print(f"RMSE: {rmse:.4f}")
+
