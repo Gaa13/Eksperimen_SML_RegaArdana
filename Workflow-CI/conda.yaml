@@ -1,8 +1,9 @@
+name: mlflow-env
 channels:
 - conda-forge
 dependencies:
 - python=3.12.7
-- pip<=24.2
+- pip
 - pip:
   - mlflow==2.19.0
   - cloudpickle
@@ -12,4 +13,3 @@ dependencies:
   - pyarrow
   - scikit-learn
   - scipy
-name: mlflow-env
