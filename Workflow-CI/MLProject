@@ -1,1 +1,7 @@
+name: Workflow-CI_Rega
 
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    command: "python Modelling.py"
