@@ -30,12 +30,12 @@ jobs:
       # 3. Install Library
       - name: Install Dependencies
         run: |
-          pip install -r Modelling_requirements.txt
+          pip install mlflow pandas numpy scikit-learn scipy psutil pyarrow cloudpickle
 
-      # 4. Jalankan Script Training
-      - name: Run Training Script
+      # 4. Jalankan MLflow
+      - name: Run MLflow
         run: |
-          python Modelling_Tunning.py
+          mlflow run . --env-manager=local
 
       # 5. Simpan Hasil (Commit & Push)
       - name: Commit and Push MLflow Artifacts
