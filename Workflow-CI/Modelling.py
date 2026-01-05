@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # MLFlow
-mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+mlflow.set_tracking_uri("file:./mlruns")
 mlflow.set_experiment("SML_Rega Ardana")
 
 # Dataset
@@ -21,9 +21,6 @@ y_train = y_train.values.ravel()
 y_test = y_test.values.ravel()
 
 print("Data berhasil dimuat.")
-
-# MLFLOW
-mlflow.set_experiment("Modelling_Tunning")
 
 # HYPERPARAMETER TUNING
 rf = RandomForestRegressor(random_state=42)
@@ -71,5 +68,6 @@ with mlflow.start_run(run_name="Modelling"):
 
     print(f"R2 Score (Test): {r2:.4f}")
     print(f"RMSE: {rmse:.4f}")
+
 
 
