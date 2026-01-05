@@ -34,6 +34,8 @@ jobs:
 
       # 4. Jalankan MLflow
       - name: Run MLflow
+        env:
+          MLFLOW_TRACKING_URI: "file:./mlruns"
         run: |
           mlflow run . --env-manager=local
 
