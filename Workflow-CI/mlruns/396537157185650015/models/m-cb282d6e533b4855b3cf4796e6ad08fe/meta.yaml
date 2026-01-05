@@ -1,0 +1,10 @@
+artifact_location: file:///home/runner/work/Eksperimen_SML_RegaArdana/Eksperimen_SML_RegaArdana/Workflow-CI/mlruns/396537157185650015/models/m-cb282d6e533b4855b3cf4796e6ad08fe/artifacts
+creation_timestamp: 1767618057333
+experiment_id: '396537157185650015'
+last_updated_timestamp: 1767618060187
+model_id: m-cb282d6e533b4855b3cf4796e6ad08fe
+model_type: null
+name: model
+source_run_id: fe0ab18f60784477a184630e46bf4dc3
+status: 2
+status_message: null

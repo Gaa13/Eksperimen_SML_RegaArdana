@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_RegaArdana/Eksperimen_SML_RegaArdana/Workflow-CI/mlruns/396537157185650015/fe0ab18f60784477a184630e46bf4dc3/artifacts
+end_time: 1767618060686
+entry_point_name: ''
+experiment_id: '396537157185650015'
+lifecycle_stage: active
+run_id: fe0ab18f60784477a184630e46bf4dc3
+run_name: Modelling
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767617934207
+status: 3
+tags: []
+user_id: runner
