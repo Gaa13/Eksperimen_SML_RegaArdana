@@ -37,7 +37,7 @@ jobs:
         env:
           MLFLOW_TRACKING_URI: "file:./mlruns"
         run: |
-          mlflow run . --env-manager=local
+          mlflow run . --env-manager=local --experiment-name "Modelling"
 
       # 5. Simpan Hasil (Commit & Push)
       - name: Commit and Push MLflow Artifacts
